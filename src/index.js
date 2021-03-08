@@ -143,8 +143,9 @@ module.exports = class Reader extends Component {
     const isFirefox = /firefox/i.test(navigator.userAgent);
     const isSafari = !!navigator.userAgent.match(/Version\/[\d/]+.*Safari/);
 
+    let supported = {}
     if (navigator.mediaDevices && typeof navigator.mediaDevices.getSupportedConstraints === 'function') {
-      const supported = navigator.mediaDevices.getSupportedConstraints()
+      supported = navigator.mediaDevices.getSupportedConstraints()
     }
     const constraints = {}
 
